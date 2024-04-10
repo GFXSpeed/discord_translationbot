@@ -6,9 +6,9 @@ It's pretty straight forward. Just react with a emoji and the bot will translate
 
 
 Make sure to:
-pip install python-dotenv
-pip install discord.py
-pip install deepl
+- pip install python-dotenv
+- pip install discord.py
+- pip install deepl
 
 You need a DeepL API-Account (https://www.deepl.com/pro/change-plan?cta=apiDocsHeader#developer). 
   Free is limited to 500.000 characters/month - should be enough to start with
