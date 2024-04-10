@@ -13,7 +13,7 @@ intents = discord.Intents.default()
 intents.members=True
 intents.message_content=True
 
-#all available DeepL languages
+#all available DeepL languages, not every language has a emoji though
 flags = {
 "🇦🇷": "ar", # Argentinien (Argentina)
 "🇧🇬": "bg", # Bulgarien (Bulgaria)
@@ -61,7 +61,7 @@ class MyClient(discord.Client):
         print(f'Message from {message.author}: {message.content}')
 
     async def on_reaction_add(self,reaction,user):
-        print(f'{user} reactet with emoji {reaction.emoji} on {reaction.message.content}')
+        print(f'{user} reacted with emoji {reaction.emoji} on {reaction.message.content}')
 
         if reaction.emoji in flags:
             lang = flags[reaction.emoji]
