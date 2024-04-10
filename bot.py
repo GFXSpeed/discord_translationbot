@@ -5,7 +5,6 @@ import deepl
 
 load_dotenv(find_dotenv())
 DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
-MYID = os.getenv("MYUSER_ID")
 
 DEEPL_TOKEN = os.getenv("DEEPL_TOKEN")
 translator = deepl.Translator(DEEPL_TOKEN)
