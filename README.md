@@ -1,5 +1,4 @@
-#Your own Translation Bot via DeepL
-Small and compact translation with deepl.ai
+Your own Translation Bot via DeepL
 
 ![example](https://github.com/GFXSpeed/discord_translationbot/assets/108990063/dd4a57c2-8d8f-484f-b301-30ad29681c14)
 
