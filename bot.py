@@ -60,13 +60,19 @@ class MyClient(discord.Client):
             return
         print(f'Message from {message.author}: {message.content}')
 
-    async def on_reaction_add(self,reaction,user):
-        print(f'{user} reacted with emoji {reaction.emoji} on {reaction.message.content}')
-
-        if reaction.emoji in flags:
-            lang = flags[reaction.emoji]
+    async def on_raw_reaction_add(self,payload):
+        channel = client.get_channel(payload.channel_id)
+        message = await channel.fetch_message(payload.message_id)
+        user = client.get_user(payload.user_id)
+        emoji = payload.emoji.name
+        
+        print(f'{user} reacted with emoji {emoji} on {message.content}')
+        
+        if emoji in flags:
+            lang = flags[emoji]
             print(f'Emoji is the flag of {lang}')
-            await reaction.message.reply(translator.translate_text(reaction.message.content, target_lang=lang),mention_author=True)
+            translated = await message.reply(translator.translate_text(message.content, target_lang=lang),mention_author=True)
+            print(f'I translated "{message.content}" to "{translated.content}".')
         else:
             print('No flag found')
             
