@@ -12,8 +12,9 @@ translator = deepl.Translator(DEEPL_TOKEN)
 intents = discord.Intents.default()
 intents.members=True
 intents.message_content=True
+intents.reactions=True
 
-#all available DeepL languages, not every language has a emoji though
+#all available DeepL languages, not every language has an emoji though
 flags = {
 "🇦🇷": "ar", # Argentinien (Argentina)
 "🇧🇬": "bg", # Bulgarien (Bulgaria)
